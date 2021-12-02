@@ -38,6 +38,6 @@ public class Send implements java.lang.Runnable{
 
    // @Override
    // public void onRequestPermissionsResult () {
-
+// Hello Jacob
    // }
 
