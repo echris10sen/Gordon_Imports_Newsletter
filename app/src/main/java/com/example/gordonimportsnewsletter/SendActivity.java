@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class SendActivity extends Activity {
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
-    public String mobileNumber = "9717575846";
+    public String mobileNumber = "8019030640";
     public String msg = "Test";
 
     @Override
