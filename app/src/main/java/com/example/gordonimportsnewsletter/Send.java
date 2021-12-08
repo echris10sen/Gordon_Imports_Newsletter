@@ -3,6 +3,7 @@ package com.example.gordonimportsnewsletter;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.telephony.SmsManager;
 
@@ -24,6 +25,12 @@ public class Send implements java.lang.Runnable{
         sms.sendTextMessage(mobileNumber, null, msg,null, null);
         System.out.println("hello");
     }
+/*
+    Intent secondIntent = getIntent();
+    String book = secondIntent.getStringExtra("bookName");
+    String chapter = secondIntent.getStringExtra("chapterName");
+    String verse = secondIntent.getStringExtra("verseName");
+*/
 
     public void sendSMSMessage() {
       //  if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED)
