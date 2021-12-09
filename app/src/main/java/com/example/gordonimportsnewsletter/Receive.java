@@ -3,11 +3,13 @@ package com.example.gordonimportsnewsletter;
 import android.app.Activity;
 
 public class Receive implements java.lang.Runnable {
-    public Receive (String name, String location, String email, String phoneNumber) {
+    private String name;
+    private String textMessage;
+    private String phoneNumber;
+    public Receive (String name, String phoneNumber, String message) {
         this.name = name;
-        this.location = location;
-        this.email = email;
         this.phoneNumber = phoneNumber;
+        this.textMessage = textMessage;
     }
     private Activity activity;
 
@@ -18,10 +20,7 @@ public class Receive implements java.lang.Runnable {
 
     // variables for our first name,
     // last name, email and avatar
-    private String name;
-    private String location;
-    private String email;
-    private String phoneNumber;
+
 
     public String getName() {
         return name;
@@ -32,19 +31,11 @@ public class Receive implements java.lang.Runnable {
     }
 
     public String getLocation() {
-        return location;
+        return textMessage;
     }
 
     public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        this.textMessage = textMessage;
     }
 
     public String getPhoneNumber() {

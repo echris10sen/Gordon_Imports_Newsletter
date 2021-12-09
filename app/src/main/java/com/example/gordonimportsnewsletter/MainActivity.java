@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void buttonReceive(View view){
         new Thread(new Receive(this)).start();
     }
-    Intent intent  = new Intent(this, Recive)
+
 
 }
 
