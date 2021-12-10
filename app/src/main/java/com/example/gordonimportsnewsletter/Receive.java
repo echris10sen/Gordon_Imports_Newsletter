@@ -6,15 +6,25 @@ public class Receive implements java.lang.Runnable {
     private String name;
     private String textMessage;
     private String phoneNumber;
+
+    private Activity activity;
+    private String api = "";
+
+    public Receive(Activity activity){
+        this.activity = activity;
+    }
     public Receive (String name, String phoneNumber, String message) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.textMessage = textMessage;
     }
-    private Activity activity;
 
     @Override
     public void run(){
+
+    }
+
+    public String getApi() {
 
     }
 

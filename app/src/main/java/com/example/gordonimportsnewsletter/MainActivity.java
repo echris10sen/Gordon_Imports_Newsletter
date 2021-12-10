@@ -1,27 +1,51 @@
 package com.example.gordonimportsnewsletter;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import com.google.gson.Gson;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    public String string = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    
+
+    private String apiKey = "1O9wDZGr2eWvkOIHKdQ2EIMjw50KOnuPpojvwj-byKj0";
+    private String sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/1O9wDZGr2eWvkOIHKdQ2EIMjw50KOnuPpojvwj-byKj0/?fields=sheets.properties.title"
+
+    private List<Receive> googleSheetData;
+
+
+
+
     public void buttonSend(View view){
         Intent intent = new Intent(this, SendActivity.class);
+        intent.putExtra("API", string);
         startActivity(intent);
         //new Thread(new Send(this)).start();
     }
     
     public void buttonReceive(View view){
-        new Thread(new Receive(this)).start();
+        Receive receive = new Receive(this);
+        Thread thread = new Thread(receive);
+        thread.start();
+        try {
+            thread.join();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getDataFromAPI() {
+        String url = ""
     }
 
 
